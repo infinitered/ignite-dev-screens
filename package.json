@@ -12,6 +12,7 @@
     "url": "https://github.com/infinitered/ignite-dev-screens"
   },
   "scripts": {
+    "test": "standard",
     "lint": "standard"
   },
   "standard": {
