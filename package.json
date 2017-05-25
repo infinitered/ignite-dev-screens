@@ -1,6 +1,6 @@
 {
   "name": "ignite-dev-screens",
-  "version": "2.0.0-beta.9",
+  "version": "2.0.0",
   "license": "MIT",
   "files": [
     "templates",
@@ -25,7 +25,7 @@
   "repository": "infinitered/ignite-dev-screens",
   "devDependencies": {
     "babel-eslint": "^7.1.1",
-    "standard": "^8.6.0",
-    "np": "^2.12.0"
+    "np": "^2.12.0",
+    "standard": "^8.6.0"
   }
 }
