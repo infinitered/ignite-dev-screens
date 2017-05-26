@@ -22,7 +22,10 @@ const add = async function (context) {
   ignite.addAndroidPermission('ACCESS_NETWORK_STATE')
 
   // dev screens use react-navigation
-  await ignite.addModule('react-navigation')
+  await ignite.addModule('react-navigation', { version: '1.0.0-beta.11' })
+
+  // react-native-device-info
+  await ignite.addModule('react-native-device-info', { link: true, version: '0.10.2' })
 
   // Copy the the screens to containers folder
   filesystem.copyAsync(`${sourceFolder}`, `${process.cwd()}/ignite/DevScreens`, { overwrite: true })
@@ -55,9 +58,12 @@ const remove = async function (context) {
   // Set Examples to "false" in Ignite config
   ignite.removeIgniteConfig('examples')
 
+  await ignite.removeModule('react-native-device-info', { unlink: true })
   // remove the npm module - probably should ask user here
   await ignite.removeModule('react-navigation')
+
   // Set Android Permission for NetInfo module
+  // NOTE(steve): this is too presumptious
   ignite.removeAndroidPermission('ACCESS_NETWORK_STATE')
 
   // Delete screens from containers folder
