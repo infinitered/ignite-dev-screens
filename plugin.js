@@ -25,7 +25,7 @@ const add = async function (context) {
   await ignite.addModule('react-navigation', { version: '1.0.0-beta.11' })
 
   // react-native-device-info
-  await ignite.addModule('react-native-device-info', { link: true, version: '0.10.2' })
+  await ignite.addModule('react-native-device-info', { link: true, version: '0.11.0' })
 
   // Copy the the screens to containers folder
   filesystem.copyAsync(`${sourceFolder}`, `${process.cwd()}/ignite/DevScreens`, { overwrite: true })
