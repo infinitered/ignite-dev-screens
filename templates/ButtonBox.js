@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import { TouchableOpacity, Text, Image } from 'react-native'
+import PropTypes from 'prop-types'
 import styles from './Styles/ButtonBoxStyles'
 
 export default class ButtonBox extends React.Component {

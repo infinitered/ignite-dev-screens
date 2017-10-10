@@ -27,6 +27,9 @@ const add = async function (context) {
   // react-native-device-info
   await ignite.addModule('react-native-device-info', { link: true, version: '0.11.0' })
 
+  // add prop types
+  await ignite.addModule('prop-types', { version: '15.6.0' })
+
   // Copy the the screens to containers folder
   filesystem.copyAsync(`${sourceFolder}`, `${process.cwd()}/ignite/DevScreens`, { overwrite: true })
 
