@@ -4,7 +4,7 @@ import { View, ScrollView, Text, Image, TouchableOpacity } from 'react-native'
 import { Images } from './DevTheme'
 import styles from './Styles/FaqScreenStyles'
 
-class ComponentExamplesScreen extends React.Component {
+class FaqScreen extends React.Component {
   render () {
     return (
       <View style={[styles.container, styles.mainContainer]}>
@@ -56,4 +56,4 @@ class ComponentExamplesScreen extends React.Component {
   }
 }
 
-export default ComponentExamplesScreen
+export default FaqScreen
