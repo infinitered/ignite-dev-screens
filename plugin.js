@@ -24,9 +24,6 @@ const add = async function (context) {
   // dev screens use react-navigation
   await ignite.addModule('react-navigation', { version: '1.0.0-beta.11' })
 
-  // react-native-device-info
-  await ignite.addModule('react-native-device-info', { link: true, version: '0.11.0' })
-
   // add prop types
   await ignite.addModule('prop-types', { version: '15.6.0' })
 
@@ -61,7 +58,6 @@ const remove = async function (context) {
   // Set Examples to "false" in Ignite config
   ignite.removeIgniteConfig('examples')
 
-  await ignite.removeModule('react-native-device-info', { unlink: true })
   // remove the npm module - probably should ask user here
   await ignite.removeModule('react-navigation')
 
