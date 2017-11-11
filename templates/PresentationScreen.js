@@ -6,7 +6,6 @@ import { StackNavigator } from 'react-navigation'
 // Screens
 import APITestingScreen from './APITestingScreen'
 import ComponentExamplesScreen from './ComponentExamplesScreen'
-import DeviceInfoScreen from './DeviceInfoScreen'
 import PluginExamplesScreen from './PluginExamplesScreen'
 import ThemeScreen from './ThemeScreen'
 import FaqScreen from './FaqScreen'
@@ -29,10 +28,6 @@ class PresentationScreen extends React.Component {
 
   openTheme = () => {
     this.props.navigation.navigate('ThemeScreen')
-  }
-
-  openDevice = () => {
-    this.props.navigation.navigate('DeviceInfoScreen')
   }
 
   openFaq = () => {
@@ -69,7 +64,7 @@ class PresentationScreen extends React.Component {
             <ButtonBox onPress={this.openTheme} image={Images.theme} text='Theme' />
           </View>
           <View style={styles.buttonsContainer}>
-            <ButtonBox onPress={this.openDevice} style={styles.deviceButton} image={Images.deviceInfo} text='Device Info' />
+            <ButtonBox style={styles.deviceButton} image={Images.deviceInfo} text='Device Info N/A' />
             <ButtonBox onPress={this.openFaq} style={styles.usageButton} image={Images.faq} text='FAQ' />
           </View>
         </ScrollView>
@@ -85,7 +80,6 @@ export default StackNavigator({
   PresentationScreen: {screen: PresentationScreen},
   APITestingScreen: {screen: APITestingScreen},
   ComponentExamplesScreen: {screen: ComponentExamplesScreen},
-  DeviceInfoScreen: {screen: DeviceInfoScreen},
   PluginExamplesScreen: {screen: PluginExamplesScreen},
   ThemeScreen: {screen: ThemeScreen},
   FaqScreen: {screen: FaqScreen}
