@@ -1,4 +1,4 @@
-const sourceFolder = `${process.cwd()}/node_modules/ignite-dev-screens/templates`
+const sourceFolder = `${process.cwd()}/node_modules/ignite-dev-screens-expo/templates`
 
 const add = async function (context) {
   const { patching, filesystem, print, ignite } = context

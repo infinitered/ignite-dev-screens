@@ -1,15 +1,15 @@
 {
-  "name": "ignite-dev-screens",
-  "version": "2.2.0",
+  "name": "ignite-dev-screens-expo",
+  "version": "0.0.1",
   "license": "MIT",
   "files": [
     "templates",
     "plugin.js"
   ],
   "author": {
-    "name": "Infinite Red",
-    "email": "npm@infinite.red",
-    "url": "https://github.com/infinitered/ignite-dev-screens"
+    "name": "Jimmy Bosse",
+    "email": "jimmy@jobostudios.net",
+    "url": "https://github.com/jbosse/ignite-dev-screens-expo"
   },
   "scripts": {
     "test": "standard",
@@ -22,7 +22,7 @@
       "__DEV__"
     ]
   },
-  "repository": "infinitered/ignite-dev-screens",
+  "repository": "jbosse/ignite-dev-screens-expo",
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "np": "^2.12.0",
