@@ -42,11 +42,11 @@ export default class DeviceInfoScreen extends React.Component {
   }
 
   componentDidMount () {
-    NetInfo.isConnected.addEventListener('change', this.setConnected)
+    NetInfo.isConnected.addEventListener('connectionChange', this.setConnected)
     NetInfo.isConnected.fetch().done(this.setConnected)
-    NetInfo.addEventListener('change', this.setConnectionInfo)
-    NetInfo.fetch().done(this.setConnectionInfo)
-    NetInfo.addEventListener('change', this.updateConnectionInfoHistory)
+    NetInfo.addEventListener('connectionChange', this.setConnectionInfo)
+    NetInfo.getConnectionInfo().done(this.setConnectionInfo)
+    NetInfo.addEventListener('connectionChange', this.updateConnectionInfoHistory)
 
     // an example of how to display a custom Reactotron message
     // console.tron.display({
@@ -61,9 +61,9 @@ export default class DeviceInfoScreen extends React.Component {
   }
 
   componentWillUnmount () {
-    NetInfo.isConnected.removeEventListener('change', this.setConnected)
-    NetInfo.removeEventListener('change', this.setConnectionInfo)
-    NetInfo.removeEventListener('change', this.updateConnectionInfoHistory)
+    NetInfo.isConnected.removeEventListener('connectionChange', this.setConnected)
+    NetInfo.removeEventListener('connectionChange', this.setConnectionInfo)
+    NetInfo.removeEventListener('connectionChange', this.updateConnectionInfoHistory)
   }
 
   setConnected = (isConnected) => {
@@ -83,7 +83,7 @@ export default class DeviceInfoScreen extends React.Component {
   netInfo () {
     return ([
       {title: 'Connection', info: (this.state.isConnected ? 'Online' : 'Offline')},
-      {title: 'Connection Info', info: this.state.connectionInfo},
+      {title: 'Connection Info', info: JSON.stringify(this.state.connectionInfo)},
       {title: 'Connection Info History', info: JSON.stringify(this.state.connectionInfoHistory)}
     ])
   }
