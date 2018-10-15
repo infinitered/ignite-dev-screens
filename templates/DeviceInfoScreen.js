@@ -129,20 +129,22 @@ export default class DeviceInfoScreen extends React.Component {
           <Image source={Images.backButton} />
         </TouchableOpacity>
         <ScrollView style={styles.container}>
-          <View style={{alignItems: 'center', paddingTop: 60}}>
-            <Image source={Images.deviceInfo} style={styles.logo} />
-            <Text style={styles.titleText}>Device Info</Text>
-          </View>
-          <View style={styles.section}>
-            <Text style={styles.sectionText} >
-              Dedicated to identifying specifics of the device.  All info useful for identifying outlying behaviour specific to a device.
-            </Text>
-          </View>
-          <View style={{padding: 10}}>
-            {this.renderCard('Device Hardware', HARDWARE_DATA)}
-            {this.renderCard('Device OS', OS_DATA)}
-            {this.renderCard('App Info', APP_DATA)}
-            {this.renderCard('Net Info', this.netInfo())}
+          <View style={styles.scrollContent}>
+            <View style={{alignItems: 'center', paddingTop: 60}}>
+              <Image source={Images.deviceInfo} style={styles.logo} />
+              <Text style={styles.titleText}>Device Info</Text>
+            </View>
+            <View style={styles.section}>
+              <Text style={styles.sectionText} >
+                Dedicated to identifying specifics of the device.  All info useful for identifying outlying behaviour specific to a device.
+              </Text>
+            </View>
+            <View style={{padding: 10}}>
+              {this.renderCard('Device Hardware', HARDWARE_DATA)}
+              {this.renderCard('Device OS', OS_DATA)}
+              {this.renderCard('App Info', APP_DATA)}
+              {this.renderCard('Net Info', this.netInfo())}
+            </View>
           </View>
         </ScrollView>
       </View>

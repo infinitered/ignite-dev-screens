@@ -63,30 +63,31 @@ export default class ThemeScreen extends React.Component {
           <Image source={Images.backButton} />
         </TouchableOpacity>
         <ScrollView style={styles.container}>
-          <View style={{alignItems: 'center', paddingTop: 60}}>
-            <Image source={Images.theme} style={styles.logo} />
-            <Text style={styles.titleText}>Themes</Text>
-          </View>
-          <View style={styles.section} key='colors-header'>
-            <Text style={styles.sectionText} key='colors'>List of Theme specific settings.  Auto-generated from Themes folder.</Text>
-          </View>
-          <View style={styles.sectionHeaderContainer}>
-            <Text style={styles.sectionHeader}>Colors</Text>
-          </View>
-          <View style={styles.colorsContainer}>
-            {this.renderColors()}
-          </View>
+          <View style={styles.scrollContent}>
+            <View style={{alignItems: 'center', paddingTop: 60}}>
+              <Image source={Images.theme} style={styles.logo} />
+              <Text style={styles.titleText}>Themes</Text>
+            </View>
+            <View style={styles.section} key='colors-header'>
+              <Text style={styles.sectionText} key='colors'>List of Theme specific settings.  Auto-generated from Themes folder.</Text>
+            </View>
+            <View style={styles.sectionHeaderContainer}>
+              <Text style={styles.sectionHeader}>Colors</Text>
+            </View>
+            <View style={styles.colorsContainer}>
+              {this.renderColors()}
+            </View>
 
-          <View style={styles.sectionHeaderContainer}>
-            <Text style={styles.sectionHeader}>Fonts</Text>
-          </View>
-          {this.renderFonts()}
+            <View style={styles.sectionHeaderContainer}>
+              <Text style={styles.sectionHeader}>Fonts</Text>
+            </View>
+            {this.renderFonts()}
 
-          <View style={styles.sectionHeaderContainer}>
-            <Text style={styles.sectionHeader}>Styles</Text>
+            <View style={styles.sectionHeaderContainer}>
+              <Text style={styles.sectionHeader}>Styles</Text>
+            </View>
+            {this.renderStyles()}
           </View>
-          {this.renderStyles()}
-
         </ScrollView>
       </View>
     )

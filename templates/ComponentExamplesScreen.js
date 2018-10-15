@@ -33,21 +33,22 @@ class ComponentExamplesScreen extends React.Component {
           <Image source={Images.backButton} />
         </TouchableOpacity>
         <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
-          <View style={{alignItems: 'center', paddingTop: 60}}>
-            <Image source={Images.components} style={styles.logo} />
-            <Text style={styles.titleText}>Components</Text>
-          </View>
-          <View style={styles.description}>
-            {this.renderAndroidWarning()}
-            <Text style={styles.sectionText}>
-              Sometimes called a 'Style Guide', or 'Pattern Library', Examples Screen is filled with usage examples
-              of fundamental components for a given application.  Use this merge-friendly way for your team
-              to show/use/test components.  Examples are registered inside each component's file for quick changes and usage identification.
-            </Text>
-          </View>
+          <View style={styles.scrollContent}>
+            <View style={{alignItems: 'center', paddingTop: 60}}>
+              <Image source={Images.components} style={styles.logo} />
+              <Text style={styles.titleText}>Components</Text>
+            </View>
+            <View style={styles.description}>
+              {this.renderAndroidWarning()}
+              <Text style={styles.sectionText}>
+                Sometimes called a 'Style Guide', or 'Pattern Library', Examples Screen is filled with usage examples
+                of fundamental components for a given application.  Use this merge-friendly way for your team
+                to show/use/test components.  Examples are registered inside each component's file for quick changes and usage identification.
+              </Text>
+            </View>
 
-          {ExamplesRegistry.renderComponentExamples()}
-
+            {ExamplesRegistry.renderComponentExamples()}
+          </View>
         </ScrollView>
       </View>
     )
