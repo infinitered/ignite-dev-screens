@@ -13,8 +13,9 @@
   },
   "scripts": {
     "ci:test": "ava",
-    "lint": "standard",
-    "shipit": "np"
+    "ci:publish": "yarn semantic-release",
+    "semantic-release": "semantic-release",
+    "lint": "standard"
   },
   "standard": {
     "parser": "babel-eslint",
@@ -24,10 +25,26 @@
   },
   "repository": "infinitered/ignite-dev-screens",
   "devDependencies": {
+    "@semantic-release/git": "^7.0.5",
     "ava": "^0.25.0",
     "babel-eslint": "^7.1.1",
-    "np": "^2.12.0",
+    "semantic-release": "^15.12.3",
     "sinon": "^7.1.1",
     "standard": "^8.6.0"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": "package.json",
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
   }
 }
