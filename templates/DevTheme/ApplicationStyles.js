@@ -23,6 +23,9 @@ const ApplicationStyles = {
       paddingTop: Metrics.baseMargin,
       backgroundColor: Colors.transparent
     },
+    scrollContent: {
+      paddingBottom: 18
+    },
     section: {
       margin: Metrics.section,
       padding: Metrics.baseMargin

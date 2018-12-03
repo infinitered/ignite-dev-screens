@@ -8,6 +8,8 @@ import { Images } from './DevTheme'
 
 // Examples Render Engine
 import ExamplesRegistry from '../../App/Services/ExamplesRegistry'
+import '../Examples/Components/animatableExample.js'
+import '../Examples/Components/vectorExample.js'
 
 // Styles
 import styles from './Styles/PluginExamplesScreenStyles'
@@ -26,21 +28,22 @@ class PluginExamplesScreen extends React.Component {
           <Image source={Images.backButton} />
         </TouchableOpacity>
         <ScrollView style={styles.container}>
-          <View style={{alignItems: 'center', paddingTop: 60}}>
-            <Image source={Images.usageExamples} style={styles.logo} />
-            <Text style={styles.titleText}>Plugin Examples</Text>
+          <View style={styles.scrollContent}>
+            <View style={{alignItems: 'center', paddingTop: 60}}>
+              <Image source={Images.usageExamples} style={styles.logo} />
+              <Text style={styles.titleText}>Plugin Examples</Text>
+            </View>
+            <View style={styles.section}>
+              <Text style={styles.sectionText} >
+                The Plugin Examples screen is a playground for 3rd party libs and logic proofs.
+                Items on this screen can be composed of multiple components working in concert.  Functionality demos of libs and practices
+              </Text>
+            </View>
+
+            {ExamplesRegistry.renderPluginExamples()}
+
+            <View style={styles.screenButtons} />
           </View>
-          <View style={styles.section}>
-            <Text style={styles.sectionText} >
-              The Plugin Examples screen is a playground for 3rd party libs and logic proofs.
-              Items on this screen can be composed of multiple components working in concert.  Functionality demos of libs and practices
-            </Text>
-          </View>
-
-          {ExamplesRegistry.renderPluginExamples()}
-
-          <View style={styles.screenButtons} />
-
         </ScrollView>
       </View>
     )
