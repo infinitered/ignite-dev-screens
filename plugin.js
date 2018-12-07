@@ -21,9 +21,6 @@ const add = async function (context) {
   // Set Android Permission for NetInfo module
   ignite.addAndroidPermission('ACCESS_NETWORK_STATE')
 
-  // dev screens use react-navigation
-  await ignite.addModule('react-navigation', { version: '1.0.0-beta.11' })
-
   // react-native-device-info
   await ignite.addModule('react-native-device-info', { link: true, version: '0.11.0' })
 
@@ -31,7 +28,7 @@ const add = async function (context) {
   await ignite.addModule('prop-types', { version: '15.6.0' })
 
   // Copy the the screens to containers folder
-  filesystem.copyAsync(`${sourceFolder}`, `${process.cwd()}/ignite/DevScreens`, { overwrite: true })
+  await filesystem.copyAsync(`${sourceFolder}`, `${process.cwd()}/ignite/DevScreens`, { overwrite: true })
 
   // Set showDevScreens to __DEV__
   ignite.setDebugConfig('showDevScreens', '__DEV__', true)
