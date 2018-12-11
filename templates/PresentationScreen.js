@@ -2,7 +2,7 @@ import React from 'react'
 import { ScrollView, Text, Image, View, TouchableOpacity } from 'react-native'
 import { Images } from './DevTheme'
 import ButtonBox from './ButtonBox'
-import { createStackNavigator } from 'react-navigation'
+import { createStackNavigator, createAppContainer } from 'react-navigation'
 // Screens
 import APITestingScreen from './APITestingScreen'
 import ComponentExamplesScreen from './ComponentExamplesScreen'
@@ -81,7 +81,7 @@ class PresentationScreen extends React.Component {
   }
 }
 
-export default createStackNavigator({
+const AppNavigator = createStackNavigator({
   PresentationScreen: {screen: PresentationScreen},
   APITestingScreen: {screen: APITestingScreen},
   ComponentExamplesScreen: {screen: ComponentExamplesScreen},
@@ -108,3 +108,4 @@ export default createStackNavigator({
     }
   }
 })
+export default createAppContainer(AppNavigator);
