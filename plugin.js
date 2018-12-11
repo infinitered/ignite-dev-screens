@@ -31,7 +31,7 @@ const add = async function (context) {
   await ignite.addModule('prop-types', { version: '15.6.0' })
 
   // Copy the the screens to containers folder
-  filesystem.copyAsync(`${sourceFolder}`, `${process.cwd()}/ignite/DevScreens`, { overwrite: true })
+  await filesystem.copyAsync(`${sourceFolder}`, `${process.cwd()}/ignite/DevScreens`, { overwrite: true })
 
   // Set showDevScreens to __DEV__
   ignite.setDebugConfig('showDevScreens', '__DEV__', true)
