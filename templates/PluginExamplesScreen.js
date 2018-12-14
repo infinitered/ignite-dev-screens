@@ -3,7 +3,7 @@
 // As to not break the automated addition/subtractions.
 import React from 'react'
 import { View, ScrollView, Text, TouchableOpacity, Image } from 'react-native'
-import { createStackNavigator } from 'react-navigation'
+import { createStackNavigator, createAppContainer } from 'react-navigation'
 import { Images } from './DevTheme'
 
 // Examples Render Engine
@@ -50,7 +50,7 @@ class PluginExamplesScreen extends React.Component {
   }
 }
 
-export default createStackNavigator({
+const stackNavigator = createStackNavigator({
   PluginExamplesScreen: {screen: PluginExamplesScreen}
 }, {
   cardStyle: {
@@ -60,3 +60,5 @@ export default createStackNavigator({
   headerMode: 'none',
   initialRouteName: 'PluginExamplesScreen'
 })
+
+export default createAppContainer(stackNavigator)
