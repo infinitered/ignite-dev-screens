@@ -49,6 +49,24 @@ const add = async function (context) {
     print.info(MANUAL_INSTALL_INFO)
   }
 
+  // Patch for animatable
+  const animatableExample = `${process.cwd()}/App/node_modules/ignite-animatable`
+  if (!filesystem.exists(animatableExample)) {
+    ignite.patchInFile(`${process.cwd()}/ignite/DevScreens/PluginExamplesScreen.js`, {
+      after: 'import \'../Examples/Components/animatableExample.js\'',
+      insert: '\n// animatableExample removed - ignite-animatable not installed'
+    })
+  }
+
+  // Patch for animatable
+  const vectorExample = `${process.cwd()}/App/node_modules/ignite-vector-icons`
+  if (!filesystem.exists(vectorExample)) {
+    ignite.patchInFile(`${process.cwd()}/ignite/DevScreens/PluginExamplesScreen.js`, {
+      after: 'import \'../Examples/Components/vectorExample.js\'',
+      insert: '\n// vectorExample removed - ignite-vector-icons not installed'
+    })
+  }
+
   // Call the function in the navigation, which adds/provides the dev screens
   // TODO: Use navigation generator to add screens
 }
