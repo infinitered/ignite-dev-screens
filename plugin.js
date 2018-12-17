@@ -21,9 +21,6 @@ const add = async function (context) {
   // Set Android Permission for NetInfo module
   ignite.addAndroidPermission('ACCESS_NETWORK_STATE')
 
-  // dev screens use react-navigation
-  await ignite.addModule('react-navigation', { version: '1.0.0-beta.11' })
-
   // react-native-device-info
   await ignite.addModule('react-native-device-info', { link: true, version: '0.11.0' })
 
@@ -80,8 +77,6 @@ const remove = async function (context) {
   ignite.removeIgniteConfig('examples')
 
   await ignite.removeModule('react-native-device-info', { unlink: true })
-  // remove the npm module - probably should ask user here
-  await ignite.removeModule('react-navigation')
 
   // Set Android Permission for NetInfo module
   // NOTE(steve): this is too presumptious
