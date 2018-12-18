@@ -57,7 +57,7 @@ const add = async function (context) {
       })
     }
   
-    // Patch for animatable
+    // Patch for vector-icons
     const vectorExample = `${process.cwd()}/node_modules/ignite-vector-icons`
     if (!filesystem.exists(vectorExample)) {
       ignite.patchInFile(pluginExamplesScreen, {
