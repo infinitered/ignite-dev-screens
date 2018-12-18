@@ -53,7 +53,7 @@ const add = async function (context) {
     if (!filesystem.exists(animatableExample)) {
       ignite.patchInFile(pluginExamplesScreen, {
         replace: 'import \'../Examples/Components/animatableExample.js\'',
-        insert: '// animatableExample removed - ignite-animatable not installed [DO NOT REMOVE THIS LINE!]'
+        insert: '// animatableExample removed - ignite-animatable not installed'
       })
     } else {
       ignite.patchInFile(pluginExamplesScreen, {
@@ -71,7 +71,7 @@ const add = async function (context) {
     if (!filesystem.exists(vectorExample)) {
       ignite.patchInFile(pluginExamplesScreen, {
         replace: 'import \'../Examples/Components/vectorExample.js\'',
-        insert: '// vectorExample removed - ignite-vector-icons not installed [DO NOT REMOVE THIS LINE!]'
+        insert: '// vectorExample removed - ignite-vector-icons not installed'
       })
     } else {
       ignite.patchInFile(pluginExamplesScreen, {
