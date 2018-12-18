@@ -49,20 +49,20 @@ const add = async function (context) {
   // Patch for animatable
   const pluginExamplesScreen = `${process.cwd()}/ignite/DevScreens/PluginExamplesScreen.js`
   try {
-    const animatableExample = `${process.cwd()}/App/node_modules/ignite-animatable`
+    const animatableExample = `${process.cwd()}/node_modules/ignite-animatable`
     if (!filesystem.exists(animatableExample)) {
       ignite.patchInFile(pluginExamplesScreen, {
         replace: 'import \'../Examples/Components/animatableExample.js\'',
-        insert: '\n// animatableExample removed - ignite-animatable not installed'
+        insert: '// animatableExample removed - ignite-animatable not installed'
       })
     }
   
     // Patch for animatable
-    const vectorExample = `${process.cwd()}/App/node_modules/ignite-vector-icons`
+    const vectorExample = `${process.cwd()}/node_modules/ignite-vector-icons`
     if (!filesystem.exists(vectorExample)) {
       ignite.patchInFile(pluginExamplesScreen, {
         replace: 'import \'../Examples/Components/vectorExample.js\'',
-        insert: '\n// vectorExample removed - ignite-vector-icons not installed'
+        insert: '// vectorExample removed - ignite-vector-icons not installed'
       })
     }
   } catch(e) {
