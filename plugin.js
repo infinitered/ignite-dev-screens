@@ -46,6 +46,44 @@ const add = async function (context) {
     print.info(MANUAL_INSTALL_INFO)
   }
 
+  // Patch for animatable
+  const pluginExamplesScreen = `${process.cwd()}/ignite/DevScreens/PluginExamplesScreen.js`
+  try {
+    const animatableExample = `${process.cwd()}/node_modules/ignite-animatable`
+    if (!filesystem.exists(animatableExample)) {
+      ignite.patchInFile(pluginExamplesScreen, {
+        replace: 'import \'../Examples/Components/animatableExample.js\'',
+        insert: '// animatableExample removed - ignite-animatable not installed'
+      })
+    } else {
+      ignite.patchInFile(pluginExamplesScreen, {
+        replace: '// animatableExample removed - ignite-animatable not installed',
+        insert: 'import \'../Examples/Components/animatableExample.js\''
+      })
+    }
+  } catch(e) {
+    print.info(`Something went wrong patching out missing ignite-animatable - ${e}`)
+  }
+  
+  try {
+    // Patch for vector-icons
+    const vectorExample = `${process.cwd()}/node_modules/ignite-vector-icons`
+    if (!filesystem.exists(vectorExample)) {
+      ignite.patchInFile(pluginExamplesScreen, {
+        replace: 'import \'../Examples/Components/vectorExample.js\'',
+        insert: '// vectorExample removed - ignite-vector-icons not installed'
+      })
+    } else {
+      ignite.patchInFile(pluginExamplesScreen, {
+        replace: '// vectorExample removed - ignite-vector-icons not installed',
+        insert: 'import \'../Examples/Components/vectorExample.js\''
+      })
+    }
+  } catch(e) {
+    print.info(`Something went wrong patching out missing ignite-vector-icons - ${e}`)
+  }
+
+
   // Call the function in the navigation, which adds/provides the dev screens
   // TODO: Use navigation generator to add screens
 }
