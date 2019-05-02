@@ -1,7 +1,8 @@
 const sourceFolder = `${process.cwd()}/node_modules/ignite-dev-screens/templates`
 
 const add = async function (context) {
-  const { patching, filesystem, print, ignite } = context
+  const { filesystem, print, ignite } = context
+  const { patching } = ignite
 
   const MANUAL_INSTALL_INFO = `
   ✨ DevScreens installed!
@@ -64,7 +65,7 @@ const add = async function (context) {
   } catch(e) {
     print.info(`Something went wrong patching out missing ignite-animatable - ${e}`)
   }
-  
+
   try {
     // Patch for vector-icons
     const vectorExample = `${process.cwd()}/node_modules/ignite-vector-icons`
