@@ -59,6 +59,7 @@ test('adds itself and inserts into file', async t => {
       exists: exists
     },
     ignite: {
+      ...defaultContext.ignite,
       patching: {
         ...defaultContext.patching,
         isInFile: isInFile
